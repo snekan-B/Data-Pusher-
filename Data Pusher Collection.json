@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "d364ca19-55e8-406f-82f3-3cb602bc249f",
+		"name": "Data Pusher Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27278740"
+	},
+	"item": [
+		{
+			"name": "Account creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"node13@example.com\",\r\n  \"name\": \"Ken\",\r\n  \"website\": \"https://myapp.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/accounts/b99c1850-de9c-46d3-924d-90a8e3826ef6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						"b99c1850-de9c-46d3-924d-90a8e3826ef6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding Destination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\": \"https://webhook.site/7af268e0-b683-4d14-b5da-5b20400236fd\",  \r\n  \"method\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"aa8f1cf0-6b29-4fc3-b530-06561a311537\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*/*\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/destinations/b99c1850-de9c-46d3-924d-90a8e3826ef6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"destinations",
+						"b99c1850-de9c-46d3-924d-90a8e3826ef6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching destination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/destinations/b99c1850-de9c-46d3-924d-90a8e3826ef6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"destinations",
+						"b99c1850-de9c-46d3-924d-90a8e3826ef6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data handler",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "CL-X-TOKEN",
+						"value": "aa8f1cf0-6b29-4fc3-b530-06561a311537",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"Hola this is Snekan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/server/incoming_data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"server",
+						"incoming_data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

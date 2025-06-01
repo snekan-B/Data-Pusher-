@@ -1,4 +1,3 @@
-# Node.js
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -12,24 +11,18 @@ pnpm-debug.log*
 *.sqlite3
 *.db
 
-# Logs
 logs/
 *.log
 
-# VS Code settings
 .vscode/
 
-# OS files
 .DS_Store
 Thumbs.db
 
-# Coverage reports
 coverage/
 *.lcov
 
-# Build / Dist folders
 dist/
 build/
 
-# Optional: Ignore uploaded files if any
 uploads/

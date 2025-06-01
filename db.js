@@ -1,9 +1,8 @@
 const sqlite3 = require("sqlite3").verbose();
-const db = new sqlite3.Database(":memory:");
+const db = new sqlite3.Database("data-pusher.db");
 
-// Create tables
 db.serialize(() => {
-  db.run(`CREATE TABLE accounts (
+  db.run(`CREATE TABLE IF NOT EXISTS accounts (
     id TEXT PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
     name TEXT NOT NULL,
@@ -11,7 +10,7 @@ db.serialize(() => {
     website TEXT
   )`);
 
-  db.run(`CREATE TABLE destinations (
+  db.run(`CREATE TABLE IF NOT EXISTS destinations (
     id TEXT PRIMARY KEY,
     accountId TEXT,
     url TEXT NOT NULL,
